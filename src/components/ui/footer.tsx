@@ -7,7 +7,7 @@
     
     export default function Footer() {
   return (
-    <div className = "bottom-0 grid grid-cols-3 bg-gradient-to-r from-orange-200 to-gray-200 mx-5">
+    <div className = "bottom-0 grid grid-cols-3 bg-gradient-to-r from-orange-200 to-gray-200">
       <div className="mx-5 my-5">
              <Card className="rounded-1xl w-80 items-center border-none shadow-none bg-transparent">
               <CardTitle><img src = "/notionsoft-logo.png" className="w-50 px-5"></img></CardTitle>
