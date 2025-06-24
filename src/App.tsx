@@ -1,9 +1,3 @@
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuLink,
-} from "./components/ui/navigation-menu"; // adjust your import path
 
 import {
   Card,
@@ -15,44 +9,14 @@ import {
 
 import { Button } from "@/components/ui/button"
 import { MapPinHouse, Mail, Phone, Home, Settings, Info } from 'lucide-react';
+import Header from "@/components/ui/header";
 
 
-export default function Header() {
+export default function App() {
   return (
     <div className="bg-gwhite shadow-md">
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-gray-300 to-orange-200 shadow-md mx-5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <NavigationMenu className="flex items-center justify-between p-2">
-          {/* Logo on the left */}
-          <div className="flex items-center mr-6">
-            <img
-              src="/notionsoft-logo.png"
-              alt="Notion Soft"
-              className="h-18 w-auto"
-            />
-          </div>
-
-          {/* Navigation links */}
-          <NavigationMenuList className="flex space-x-4">
-            <NavigationMenuItem>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/home">Home</NavigationMenuLink>
-            </NavigationMenuItem>
-              <NavigationMenuItem>
-              <NavigationMenuLink href="/services">Services</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/about-us">About Us</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/contact-us">Contact</NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
-    </header>
-    <div className = "mx-5 rounded-0">
+      <Header />
+        <div className = "mx-5 rounded-0">
       <Card className="h-150 rounded-sm">
           <CardHeader>
             <CardTitle className="text-5xl pt-20 pl-20 pr-200">Empowering Your Business with Web, Mobile, AI, and Desktop Applications.</CardTitle>
