@@ -88,7 +88,7 @@ function Services() {
       </div>
       <div className='grid grid-cols-1 bg-gradient-to-r from-gray-200 to-orange-100'>
               <div className='grid grid-cols-2 h-screen items-center justify-center'>
-                <img src = "/fardin.jpg" className='ml-50 mt-5 rounded-md w-2/3 shadow-2xl shadow-gray-700'></img>
+                <img src = "/web_dev.jpg" className='ml-50 mt-5 rounded-md w-2/3 shadow-2xl shadow-gray-700'></img>
                 <Card className='mr-50 mt-5 shadow-0 border-none bg-transparent shadow-none'>
                     <CardHeader>
                       <CardTitle className='text-5xl text-orange-300'>Web Development</CardTitle>
@@ -102,7 +102,7 @@ function Services() {
                 </Card>
               </div>
               <div className='grid grid-cols-2 h-screen items-center justify-center'>
-                <img src = "/fardin.jpg" className='ml-50 mt-5 rounded-md w-2/3 shadow-2xl shadow-gray-700'></img>
+                <img src = "/mob_dev.jpg" className='ml-50 mt-5 rounded-md w-2/3 shadow-2xl shadow-gray-700'></img>
                 <Card className='mr-50 mt-5 shadow-0 border-none bg-transparent shadow-none'>
                     <CardHeader>
                       <CardTitle className='text-5xl text-orange-300'>Mobile App Development</CardTitle>
@@ -115,7 +115,7 @@ function Services() {
                 </Card>
               </div>
               <div className='grid grid-cols-2 h-screen items-center justify-center'>
-                <img src = "/fardin.jpg" className='ml-50 mt-5 rounded-md w-2/3 shadow-2xl shadow-gray-700'></img>
+                <img src = "/desktop_dev.jpg" className='ml-50 mt-5 rounded-md w-2/3 shadow-2xl shadow-gray-700'></img>
                 <Card className='mr-50 mt-5 shadow-0 border-none bg-transparent shadow-none'>
                     <CardHeader>
                       <CardTitle className='text-5xl text-orange-300 '>Desktop App Development</CardTitle>
