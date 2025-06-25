@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import { Monitor, Cpu, Eye, Network, LayoutDashboard, Smartphone, Earth, Bot, Coins} from 'lucide-react'
+import { Monitor, Cpu, Eye, Network, LayoutDashboard, Smartphone, Earth, Bot, Coins, Code} from 'lucide-react'
 
 
 function Services() {
@@ -15,7 +15,7 @@ function Services() {
     <div >
       <Header />
       <div className='bg-gradient-to-l from-gray-200 to-orange-100 h-screen flex items-center justify-center'>
-        <div className='bg-white p-8 rounded-lg shadow-lg w-full mx-20 my-10'>
+        <div className='bg-white p-5 rounded-lg shadow-lg w-full mx-20 my-5'>
           <h1 className='text-bold text-2xl text-center'>Our Services At A Glance</h1>
           <h1 className='text-bold text-1xl text-center text-gray-500'>We deliver smart, scalable, and reliable tech solutions — from AI and 
             desktop apps to secure networks and biometric systems.</h1>
@@ -52,14 +52,14 @@ function Services() {
                 <CardHeader>
                   <CardTitle className='text-orange-300'>📊 Data Dashboards</CardTitle>
                   <CardDescription>Interactive dashboards to visualize KPIs, metrics, and analytics in real-time.</CardDescription>
-                  <CardAction><Monitor className='text-orange-300' /></CardAction>
+                  <CardAction><LayoutDashboard className='text-orange-300' /></CardAction>
                 </CardHeader>
               </Card>
               <Card className='mt-3 shadow-2xl shadow-gray-500 mx-5'>
                 <CardHeader>
                   <CardTitle className='text-orange-300'>📱 Mobile App Development</CardTitle>
                   <CardDescription>Cross-platform apps for iOS and Android with a focus on user experience.</CardDescription>
-                  <CardAction><Monitor className='text-orange-300' /></CardAction>
+                  <CardAction><Smartphone className='text-orange-300' /></CardAction>
                 </CardHeader>
               </Card>
                 <Card className='mt-3 shadow-2xl shadow-gray-500 mx-5'>
@@ -83,10 +83,25 @@ function Services() {
                   <CardAction><Bot className='text-orange-300' /></CardAction>
                 </CardHeader>
               </Card>
-              
             </div>
         </div>
       </div>
+      <div className='grid grid-cols-1 bg-gradient-to-r from-gray-200 to-orange-100'>
+              <div className='grid grid-cols-2 h-screen items-center justify-center'>
+                <img src = "/fardin.jpg" className='ml-50 mt-5 rounded-md w-2/3'></img>
+                <Card className='mr-50 mt-5 shadow-0 border-none bg-transparent shadow-none'>
+                    <CardHeader>
+                      <CardTitle className='text-5xl text-orange-300'>Web Development</CardTitle>
+                      <CardDescription className='text-xl'>We design and develop elegant, scalable, and high-performance websites 
+                        that elevate your brand and streamline 
+                        your digital services. From responsive corporate sites to 
+                        complex web portals, we deliver customized 
+                        solutions with cutting-edge technologies.</CardDescription>
+                      <CardAction><Code className='text-orange-300' /></CardAction>
+                    </CardHeader>
+                </Card>
+              </div>
+            </div>
     </div>
   )
 }
