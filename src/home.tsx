@@ -70,14 +70,15 @@ export default function Home() {
         <CardTitle className="text-orange-200">Sayed Naweed Sayedy, Founder & CEO</CardTitle>
         <CardDescription>"At NotionSoft, our mission goes beyond delivering technology — we strive to create meaningful digital experiences that drive real business transformation. Every line of code, every process we optimize, and every solution we build is guided by our passion for excellence and innovation. We are not just a service provider — we are a long-term partner in our clients' growth journeys."</CardDescription>
       </Card>
-      <div className="grid grid-cols-6 gap-60 mx-40 mb-20 mt-10">
+      <div className="grid grid-cols-6 gap-60 mx-40 mb-20 mt-10 bg-[url('/bg-image.png')]  bg-center w-280 h-60">
       <Card className="flex items-center mb-2 mr-2 ml-5 p-5 bg-gradient-to-r from-gray-300 to-orange-200 text-black rounded-sm 
-      shadow-black shadow-none w-50">
+       shadow-lg w-50">
         <img className="rounded-full h-30 w-30 shadow-2xl shadow-orange-200 mb-2" src="/jala.jpeg" alt="" />
         <CardTitle className="text-black">Jalal Bakhty</CardTitle>
         <CardDescription>Co-Founder</CardDescription>
       </Card>
-       <Card className="flex items-center mb-2 w-50 ml-2 mr-2 p-5 bg-gradient-to-r from-gray-300 to-orange-200 shadow-none shadow-black rounded-sm">
+       <Card className="flex items-center mb-2 w-50 ml-2 mr-2 p-5 bg-gradient-to-r from-gray-300 to-orange-200 shadow-none 
+       shadow-black rounded-sm">
         <img className="rounded-full h-30 w-30 shadow-2xl shadow-orange-200" src="/imran.png" alt="" />
         <CardTitle>Imran Orya</CardTitle>
         <CardDescription>Frontend Developer</CardDescription>
@@ -87,12 +88,14 @@ export default function Home() {
         <CardTitle>Waheed Safi</CardTitle>
         <CardDescription>Backend Developer</CardDescription>
       </Card>
-       <Card className="flex items-center ml-5 w-50 mr-2 mb-3 p-5 bg-gradient-to-r from-gray-300 to-orange-200 text-black rounded-sm shadow-black shadow-none">
+       <Card className="flex items-center ml-5 w-50 mr-2 mb-3 p-5 bg-gradient-to-r from-gray-300 to-orange-200 text-black rounded-sm shadow-black 
+       shadow-none">
         <img className="rounded-full h-30 w-30 shadow-2xl shadow-orange-200" src="/fardin.jpg" alt="" />
         <CardTitle>Fardin Ibrahimi</CardTitle>
         <CardDescription>AI Engineer</CardDescription>
       </Card>
-       <Card className="flex items-center mr-5 w-50 ml-2 mb-3 p-5 bg-gradient-to-r from-gray-300 to-orange-200 text-black rounded-sm shadow-black shadow-none">
+       <Card className="flex items-center mr-5 w-50 ml-2 mb-3 p-5 bg-gradient-to-r from-gray-300 to-orange-200 text-black rounded-sm
+        shadow-black shadow-none">
         <img className="rounded-full h-30 w-30 shadow-2xl shadow-orange-200" src="/nesar.jpg" alt="" />
         <CardTitle>Nesar Awwab</CardTitle>
         <CardDescription>Backend Developer</CardDescription>
