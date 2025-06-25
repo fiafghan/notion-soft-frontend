@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card"
 
 import { Monitor, Cpu, Eye, Network, LayoutDashboard, Smartphone, Earth, Bot, Coins, Code} from 'lucide-react'
+import Footer from './components/ui/footer'
 
 
 function Services() {
@@ -128,6 +129,7 @@ function Services() {
                     </CardHeader>
                 </Card>
               </div>
+              <Footer />
             </div>
     </div>
   )
