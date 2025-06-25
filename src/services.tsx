@@ -88,7 +88,7 @@ function Services() {
       </div>
       <div className='grid grid-cols-1 bg-gradient-to-r from-gray-200 to-orange-100'>
               <div className='grid grid-cols-2 h-screen items-center justify-center'>
-                <img src = "/fardin.jpg" className='ml-50 mt-5 rounded-md w-2/3'></img>
+                <img src = "/fardin.jpg" className='ml-50 mt-5 rounded-md w-2/3 shadow-2xl shadow-gray-700'></img>
                 <Card className='mr-50 mt-5 shadow-0 border-none bg-transparent shadow-none'>
                     <CardHeader>
                       <CardTitle className='text-5xl text-orange-300'>Web Development</CardTitle>
@@ -98,6 +98,33 @@ function Services() {
                         complex web portals, we deliver customized 
                         solutions with cutting-edge technologies.</CardDescription>
                       <CardAction><Code className='text-orange-300' /></CardAction>
+                    </CardHeader>
+                </Card>
+              </div>
+              <div className='grid grid-cols-2 h-screen items-center justify-center'>
+                <img src = "/fardin.jpg" className='ml-50 mt-5 rounded-md w-2/3 shadow-2xl shadow-gray-700'></img>
+                <Card className='mr-50 mt-5 shadow-0 border-none bg-transparent shadow-none'>
+                    <CardHeader>
+                      <CardTitle className='text-5xl text-orange-300'>Mobile App Development</CardTitle>
+                      <CardDescription className='text-xl'>We build modern, high-performing mobile apps that are visually stunning, fast, and user-friendly — 
+                        helping you reach your audience anytime, anywhere. 
+                        Whether you're building a customer-facing app, a digital service platform, 
+                        or a business utility, we tailor the experience to your goals.</CardDescription>
+                      <CardAction><Smartphone className='text-orange-300' /></CardAction>
+                    </CardHeader>
+                </Card>
+              </div>
+              <div className='grid grid-cols-2 h-screen items-center justify-center'>
+                <img src = "/fardin.jpg" className='ml-50 mt-5 rounded-md w-2/3 shadow-2xl shadow-gray-700'></img>
+                <Card className='mr-50 mt-5 shadow-0 border-none bg-transparent shadow-none'>
+                    <CardHeader>
+                      <CardTitle className='text-5xl text-orange-300 '>Desktop App Development</CardTitle>
+                      <CardDescription className='text-xl'>Our team specializes in building intuitive desktop 
+                        apps that run seamlessly on Windows, macOS, and Linux. 
+                        From business productivity tools to specialized industry software, w
+                        We create secure, reliable, and high-performing solutions.</CardDescription>
+                      <CardAction><Monitor className='text-orange-300' /></CardAction>
+
                     </CardHeader>
                 </Card>
               </div>
