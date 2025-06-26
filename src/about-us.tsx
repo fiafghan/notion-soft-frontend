@@ -31,20 +31,21 @@ function AboutUs() {
                         </CardHeader>
                 </Card>
                 <Card className='mx-10 my-10 rounded-none items-center p-0 shadow-none border-none'>
-                       <img src="/who-we-are.jpeg" alt="" className='w-70' />
+                       <img src="/who-we-are.jpeg" alt="" className='w-70 shadow-2xl shadow-gray-700 border-orange-500 border-3' />
 
                 </Card>
         </div>
          <div className='grid grid-cols-2 mt-2'>
                 <Card className='mt-10 mx-10 rounded-none shadow-none border-none'>
                         <CardHeader>
-                            <CardTitle className='text-2xl text-white bg-gradient-to-r from-orange-300 to-white rounded-l-md pl-2'>What We Do?</CardTitle>
+                            <CardTitle className='text-2xl text-white bg-gradient-to-r from-orange-300 to-white 
+                            rounded-l-md pl-2'>What We Do?</CardTitle>
                             <CardDescription>We build scalable digital technology solutions to encourage sustainable business growth.</CardDescription>
                             <CardAction><Settings className='text-orange-300' /></CardAction>
                         </CardHeader>
                 </Card>
                 <Card className='mx-10 my-10 rounded-none items-center p-0 shadow-none border-none'>
-                       <img src="/about-us-whatWeDo.png" alt="" className='w-70' />
+                       <img src="/about-us-whatWeDo.png" alt="" className='w-70 shadow-2xl shadow-gray-700 border-orange-500 border-3' />
 
                 </Card>
         </div>
@@ -58,7 +59,7 @@ function AboutUs() {
                         </CardHeader>
                 </Card>
                 <Card className='mx-10 my-10 rounded-none items-center p-0 shadow-none border-none'>
-                       <img src="/about-us-whoWeHelp.jpg" alt="" className='w-70' />
+                       <img src="/about-us-whoWeHelp.jpg" alt="" className='w-70 shadow-2xl shadow-gray-700 border-orange-500 border-3' />
 
                 </Card>
         </div>
@@ -72,7 +73,7 @@ function AboutUs() {
                         </CardHeader>
                 </Card>
                 <Card className='mx-10 my-10 rounded-none items-center p-0 shadow-none border-none'>
-                       <img src="/about-us-whyChooseUs.jpg" alt="" className='w-70' />
+                       <img src="/about-us-whyChooseUs.jpg" alt="" className='w-70 shadow-2xl shadow-gray-700 border-orange-500 border-3' />
                 </Card>
         </div>
         <div className='grid grid-cols-1 mt-20'>
