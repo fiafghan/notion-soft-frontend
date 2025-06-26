@@ -13,8 +13,8 @@ import Footer from "./components/ui/footer";
 export default function Home() {
   return (
     <div>
-    <div className = "rounded-0 mt-1 rounded-sm shadow-none border-t-1 border-t-orange-200">
       <Header />
+    <div className = "rounded-0 mt-1 rounded-sm shadow-none border-t-1 border-t-orange-200">
       <Card className="h-150 rounded-sm">
           <CardHeader>
             <CardTitle className="text-5xl pt-20 pl-20 pr-200">Empowering Your Business with Web, Mobile, AI, and Desktop Applications.</CardTitle>

@@ -13,11 +13,11 @@ import Footer from './components/ui/footer'
 
 function Services() {
   return (
-    <div >
+    <div>
       <Header />
       <div className='bg-gradient-to-l from-gray-200 to-orange-100 h-screen flex items-center justify-center'>
-        <div className='bg-white p-5 rounded-lg shadow-lg w-full mx-20 my-5'>
-          <h1 className='text-bold text-2xl text-center'>Our Services At A Glance</h1>
+        <div className='bg-white p-5 rounded-lg shadow-lg w-full mx-20'>
+          <h1 className='text-bold text-4xl text-center bg-gradient-to-r from-orange-500 to-gray-100 bg-clip-text text-transparent'>Our Services At A Glance</h1>
           <h1 className='text-bold text-1xl text-center text-gray-500'>We deliver smart, scalable, and reliable tech solutions — from AI and 
             desktop apps to secure networks and biometric systems.</h1>
             <div className='grid grid-cols-3'>
