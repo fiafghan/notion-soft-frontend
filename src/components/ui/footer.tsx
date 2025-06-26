@@ -28,7 +28,7 @@
       </div>
        <div className="mx-5 my-5">
              <Card className="rounded-1xl w-80 items-center border-none shadow-none bg-transparent">
-              <CardTitle>Contact</CardTitle>
+              <CardTitle className='mr-30'>Contact</CardTitle>
               <div className="grid grid-rows-3 gap-2">
           <div className = "flex flex-row"><MapPinHouse className="text-orange-300" /><span className = "ml-2">Shahr Naw, Kabul, AFG</span></div>
                 <div className = "flex flex-row"><Mail className="text-orange-300" /><span className = "ml-2">info@notionsoft.com</span></div>

@@ -1,5 +1,5 @@
 import Header from './components/ui/header'
-import { Info } from 'lucide-react';
+import { Info, Settings, HeartHandshake, MousePointerClick } from 'lucide-react';
 import {
   Card,
   CardAction,
@@ -21,7 +21,7 @@ function AboutUs() {
         <div className='grid grid-cols-2'>
                 <Card className='mt-10 mx-10 rounded-none shadow-none border-none'>
                         <CardHeader>
-                            <CardTitle className='text-2xl text-orange-300'>Who We Are?</CardTitle>
+                            <CardTitle className='text-2xl text-white bg-gradient-to-r from-orange-300 to-white rounded-l-md pl-2'>Who We Are?</CardTitle>
                             <CardDescription>NotionSoft is a leading IT solution provider delivering innovative, secure, and scalable technology 
                                 solutions across various industries. 
                                 We specialize in AI, mobile and 
@@ -38,9 +38,9 @@ function AboutUs() {
          <div className='grid grid-cols-2 mt-2'>
                 <Card className='mt-10 mx-10 rounded-none shadow-none border-none'>
                         <CardHeader>
-                            <CardTitle className='text-2xl text-orange-300'>What We Do?</CardTitle>
+                            <CardTitle className='text-2xl text-white bg-gradient-to-r from-orange-300 to-white rounded-l-md pl-2'>What We Do?</CardTitle>
                             <CardDescription>We build scalable digital technology solutions to encourage sustainable business growth.</CardDescription>
-                            <CardAction><Info className='text-orange-300' /></CardAction>
+                            <CardAction><Settings className='text-orange-300' /></CardAction>
                         </CardHeader>
                 </Card>
                 <Card className='mx-10 my-10 rounded-none items-center p-0 shadow-none border-none'>
@@ -51,10 +51,10 @@ function AboutUs() {
          <div className='grid grid-cols-2 mt-2'>
                 <Card className='mt-10 mx-10 rounded-none shadow-none border-none'>
                         <CardHeader>
-                            <CardTitle className='text-2xl text-orange-300'>Who We Help?</CardTitle>
+                            <CardTitle className='text-2xl text-white bg-gradient-to-r from-orange-300 to-white rounded-l-md pl-2'>Who We Help?</CardTitle>
                             <CardDescription>We help customers to adopt and migrate to new technologies, so businesses can modernize 
                                 the way they operate and create unparalleled customer experiences.</CardDescription>
-                            <CardAction><Info className='text-orange-300' /></CardAction>
+                            <CardAction><HeartHandshake className='text-orange-300' /></CardAction>
                         </CardHeader>
                 </Card>
                 <Card className='mx-10 my-10 rounded-none items-center p-0 shadow-none border-none'>
@@ -65,10 +65,10 @@ function AboutUs() {
         <div className='grid grid-cols-2 mt-2'>
                 <Card className='mt-10 mx-10 rounded-none shadow-none border-none'>
                         <CardHeader>
-                            <CardTitle className='text-2xl text-orange-300'>Why Choose Us?</CardTitle>
+                            <CardTitle className='text-2xl text-white bg-gradient-to-r from-orange-300 to-white rounded-l-md pl-2'>Why Choose Us?</CardTitle>
                             <CardDescription>We are an innovative technology and digital partner. We endeavor to continue to inspire, transform, 
                                 and create synergies that shape the digital world and ensure shared prosperity for all.</CardDescription>
-                            <CardAction><Info className='text-orange-300' /></CardAction>
+                            <CardAction><MousePointerClick className='text-orange-300' /></CardAction>
                         </CardHeader>
                 </Card>
                 <Card className='mx-10 my-10 rounded-none items-center p-0 shadow-none border-none'>
