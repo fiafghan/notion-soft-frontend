@@ -76,15 +76,12 @@ function AboutUs() {
         <div className='grid grid-cols-1 mt-2'>
                 <h1 className='text-orange-300 text-center text-3xl'>Core Values</h1>
                 <div className='grid grid-cols-3 mt-5 mx-5 px-5'>
-                    <Card className='mx-3 my-3 px-5'>fsdfsdfdsfsdf</Card>
-                    <Card className='mx-3 my-3 px-5'>fsdfsdfdsfsdf</Card>
-                    <Card className='mx-3 my-3 px-5'>fsdfsdfdsfsdf</Card>
-                    <Card className='mx-3 my-3 px-5'>fsdfsdfdsfsdf</Card>
-                    <Card className='mx-3 my-3 px-5'>fsdfsdfdsfsdf</Card>
-                    <Card className='mx-3 my-3 px-5'>fsdfsdfdsfsdf</Card>
-                    <Card className='mx-3 my-3 px-5'>fsdfsdfdsfsdf</Card>
-                    <Card className='mx-3 my-3 px-5'>fsdfsdfdsfsdf</Card>
-                    <Card className='mx-3 my-3 px-5'>fsdfsdfdsfsdf</Card>
+                    <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Integrity — Fair, transparent, and ethical conduct</Card>
+                    <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Innovation — Sustainable growth through creativity</Card>
+                    <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Empowerment — Turning challenges into opportunities</Card>
+                    <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Diversity — Embracing all cultures and perspectives</Card>
+                    <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Sustainability — Digital ecosystem for the future</Card>
+                    <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Shared Prosperity — Growth for all stakeholders</Card>
                 </div>
         </div>
     </div>
