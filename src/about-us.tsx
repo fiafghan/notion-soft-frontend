@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Button } from './components/ui/button';
 
 function AboutUs() {
   return (
@@ -82,6 +83,17 @@ function AboutUs() {
                     <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Diversity — Embracing all cultures and perspectives</Card>
                     <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Sustainability — Digital ecosystem for the future</Card>
                     <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Shared Prosperity — Growth for all stakeholders</Card>
+                </div>
+                <div className='grid grid-cols-1 mt-20'>
+                    <h1 className = "text-4xl text-center text-orange-300 mb-5">Contact Us</h1>
+                    <Card className='mx-100 rounded-none py-10'>
+                        <input type="text" placeholder = "Your Name" className = "mx-5 border-1 border-gray-400 px-2 text-gray-500" />
+                        <input type="text" placeholder = "Your Email" className = "mx-5 border-1 border-gray-400 px-2 text-gray-500" />
+                        <input type="text" placeholder = "Your Message" className = "mx-5 border-1 border-gray-400 px-2 text-gray-500" />
+                        <div className='grid grid-cols-1 mx-5'>
+                                <Button title='Submit' className='w-full bg-gradient-to-r from-orange-300 via-gray-400 to-orange-200'>Send</Button>
+                        </div>
+                    </Card>
                 </div>
         </div>
     </div>
