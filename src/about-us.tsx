@@ -1,14 +1,17 @@
 import Header from './components/ui/header'
-import { Info, Settings, HeartHandshake, MousePointerClick } from 'lucide-react';
+import { Info, Settings, HeartHandshake, MousePointerClick, User, Mail, MessageCircle} from 'lucide-react';
 import {
   Card,
   CardAction,
   CardDescription,
   CardHeader,
   CardTitle,
+  CardContent,
 } from "@/components/ui/card"
 import { Button } from './components/ui/button';
 import Footer from './components/ui/footer';
+import {Input} from './components/ui/input';
+import { Textarea } from "@/components/ui/textarea"
 
 function AboutUs() {
   return (
@@ -86,16 +89,49 @@ function AboutUs() {
                     <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Sustainability — Digital ecosystem for the future</Card>
                     <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Shared Prosperity — Growth for all stakeholders</Card>
                 </div>
-                <div className='grid grid-cols-1 mt-20 mb-20'>
-                    <h1 className = "text-4xl text-center text-orange-300 mb-5">Contact Us</h1>
-                    <Card className='mx-100 rounded-none bg-gradient-to-r from-gray-300 via-orange-300 to-gray-200 border-none shadow-none'>
-                        <input type="text" placeholder = "Your Name" className = "mx-5 border-1 border-gray-100 px-2 text-gray-500 focus:outline-none" />
-                        <input type="text" placeholder = "Your Email" className = "mx-5 border-1 border-gray-100 px-2 text-gray-500" />
-                        <input type="text" placeholder = "Your Message" className = "mx-5 border-1 border-gray-100 px-2 text-gray-500" />
-                        <div className='grid grid-cols-1 mx-5'>
-                                <Button title='Submit' className='w-full bg-gradient-to-r from-orange-300 via-gray-400 to-orange-200'>Send Message</Button>
-                        </div>
-                    </Card>
+                                <div className='grid grid-cols-1 mt-20 mb-20'>
+                                    <h1 className = "text-4xl text-center text-orange-300 mb-5">Contact Us</h1>
+                                <Card className="max-w-xl mx-auto mt-16 rounded-3xl border border-orange-100 bg-white/40 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)]">
+                <CardContent className="p-10 space-y-8">
+                    <h2 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-orange-500 to-orange-700 text-transparent bg-clip-text">
+                    ✉️ Contact Us
+                    </h2>
+
+                    <div className="space-y-6">
+                    <div className="relative">
+                        <User className="absolute left-4 top-3.5 text-orange-500" size={22} />
+                        <Input
+                        type="text"
+                        placeholder="Your Name"
+                        className="pl-12 py-3 rounded-2xl border border-orange-200 bg-white/70 shadow-inner focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all"
+                        />
+                    </div>
+
+                    <div className="relative">
+                        <Mail className="absolute left-4 top-3.5 text-orange-500" size={22} />
+                        <Input
+                        type="email"
+                        placeholder="Your Email"
+                        className="pl-12 py-3 rounded-2xl border border-orange-200 bg-white/70 shadow-inner focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all"
+                        />
+                    </div>
+
+                    <div className="relative">
+                        <MessageCircle className="absolute left-4 top-3.5 text-orange-500" size={22} />
+                        <Textarea
+                        placeholder="Your Message"
+                        className="pl-12 py-3 rounded-2xl border border-orange-200 bg-white/70 shadow-inner resize-none focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all"
+                        rows={5}
+                        />
+                    </div>
+                    </div>
+
+                    <Button className="w-full py-3 font-semibold text-white rounded-2xl bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:brightness-110 hover:scale-[1.01] transition-transform duration-300">
+                    Send Message
+                    </Button>
+                </CardContent>
+                </Card>
+
                 </div>
 
                 <Footer />
