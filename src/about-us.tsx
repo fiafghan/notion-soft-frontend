@@ -90,11 +90,10 @@ function AboutUs() {
                     <Card className='mx-3 my-3 px-5 bg-gradient-to-r from-gray-300 to-orange-300'>Shared Prosperity — Growth for all stakeholders</Card>
                 </div>
                                 <div className='grid grid-cols-1 mt-20 mb-20'>
-                                    <h1 className = "text-4xl text-center text-orange-300 mb-5">Contact Us</h1>
                                 <Card className="max-w-xl mx-auto mt-16 rounded-3xl border border-orange-100 bg-white/40 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)]">
                 <CardContent className="p-10 space-y-8">
                     <h2 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-orange-500 to-orange-700 text-transparent bg-clip-text">
-                    ✉️ Contact Us
+                    Contact Us
                     </h2>
 
                     <div className="space-y-6">
