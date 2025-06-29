@@ -38,7 +38,7 @@ export default function Header() {
               <NavigationMenuLink href="/about-us">About Us</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/contact-us">Contact</NavigationMenuLink>
+              <NavigationMenuLink href="/blog">Blog</NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

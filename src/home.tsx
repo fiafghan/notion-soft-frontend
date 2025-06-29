@@ -5,7 +5,6 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  CardContent,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Header from "./components/ui/header";
@@ -21,6 +20,20 @@ import {
 
 
 export default function Home() {
+
+  const ImagesUrl = [
+        "/about-us-whoWeHelp.jpg",
+        "/about-us-whatWeDo.png",
+        "/about-us-whyChooseUs.jpg",
+  ]
+
+  const texts = [
+  "Innovate. Build. Elevate.",
+  "Code Your Future Today.",
+  "Crafting Solutions, Driving Success.",
+];
+
+
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
@@ -28,35 +41,79 @@ export default function Home() {
     <div>
       <Header />
     <div className = "rounded-0 mt-1 rounded-sm shadow-none border-t-1 border-t-orange-200">
-      <Card className="h-150 rounded-sm">
+      <Card className="rounded-sm w-full">
           <CardHeader>
-            <CardTitle className="text-5xl pt-20 pl-20 pr-200">Empowering Your Business with Web, Mobile, AI, and Desktop Applications.</CardTitle>
+<CardTitle className="relative max-w-5xl text-orange-400 pt-20 pl-20 pr-16 font-extrabold leading-snug tracking-wide text-3xl md:text-4xl lg:text-5xl">
+  Empowering Your Business with{" "}
+  <span className="inline-block text-5xl md:text-6xl text-gradient bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-md">
+    W
+  </span>
+  eb,{" "}
+  <span className="inline-block text-5xl md:text-6xl text-gradient bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-md">
+    M
+  </span>
+  obile,{" "}
+  <span className="inline-block text-5xl md:text-6xl text-gradient bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-md">
+    AI
+  </span>
+  , and{" "}
+  <span className="inline-block text-5xl md:text-6xl text-gradient bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-md">
+    D
+  </span>
+  esktop Applications.
+</CardTitle>
+
             <CardDescription className="pl-20">Innovative solutions for web, mobile, and AI applications that grow your business.</CardDescription>
-            <CardAction><Button className="w-40">Read More</Button>
-           <div className="mt-5">
-             <Carousel
-      plugins={[plugin.current]}
-      className="w-full max-w-xs"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
-    >
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
+            <CardAction>
+<div className="w-full min-h-[50vh] px-6 lg:px-32">
+  <Carousel
+  plugins={[plugin.current]}
+  className="w-full max-w-screen-xl mx-auto select-none"
+  onMouseEnter={plugin.current.stop}
+  onMouseLeave={plugin.current.reset}
+>
+  <CarouselContent>
+    {ImagesUrl.map((url, index) => (
+      <CarouselItem key={index}>
+        <div className="p-4 relative">
+          <Card className="relative overflow-hidden rounded-3xl shadow-2xl min-h-[60vh] bg-black/40 backdrop-blur-md border border-white/20 group transition-transform duration-500 hover:scale-[1.03]">
+            {/* Blurred image background */}
+            <img
+              src={url}
+              alt={`Image ${index + 1}`}
+              className="absolute inset-0 w-full h-full object-cover blur-lg scale-100"
+              aria-hidden="true"
+            />
+
+            {/* Dark overlay to boost contrast */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+            {/* Crisp foreground image */}
+            <img
+              src={url}
+              alt={`Image ${index + 1}`}
+              className="relative w-full h-full object-cover rounded-3xl drop-shadow-lg blur"
+              loading="lazy"
+            />
+
+            {/* Text overlay */}
+            <div className="absolute inset-0 flex items-center justify-center px-8">
+              <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-yellow-400 text-4xl lg:text-6xl font-extrabold drop-shadow-2xl text-center animate-fadeInUp">
+                {texts[index] ?? `Beautiful Scene ${index + 1}`}
+              </h2>
             </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
-           </div>
+          </Card>
+        </div>
+      </CarouselItem>
+    ))}
+  </CarouselContent>
+
+  <CarouselPrevious className="hover:scale-110 transition-transform duration-300 bg-white/90 backdrop-blur-md rounded-full shadow-xl border border-white/30 text-black p-3" />
+  <CarouselNext className="hover:scale-110 transition-transform duration-300 bg-white/90 backdrop-blur-md rounded-full shadow-xl border border-white/30 text-black p-3" />
+</Carousel>
+</div>
+
+
             </CardAction>
           </CardHeader>
     </Card>
