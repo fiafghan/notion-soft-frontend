@@ -35,7 +35,7 @@ export default function Home() {
 
 
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 2000, stopOnInteraction: false })
   )
   return (
     <div>
@@ -69,8 +69,6 @@ export default function Home() {
   <Carousel
   plugins={[plugin.current]}
   className="w-full max-w-screen-xl mx-auto select-none"
-  onMouseEnter={plugin.current.stop}
-  onMouseLeave={plugin.current.reset}
 >
   <CarouselContent>
     {ImagesUrl.map((url, index) => (
