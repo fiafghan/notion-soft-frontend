@@ -147,18 +147,22 @@ export default function Home() {
         ].map(([img, name, title], i) => (
           <Card key={i} className="flex flex-col items-center text-center bg-gradient-to-br from-gray-100 to-white p-6 rounded-xl shadow">
                 <div className="relative inline-block">
-  <div className="absolute inset-0 rounded-full bg-orange-400 opacity-30 animate-bounce"></div>
-  <img
-    src={img}
-    alt={name}
-    className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1
-               bg-gradient-to-tr from-orange-500 via-orange-200 to-white
-               ring-6 ring-white shadow-md shadow-orange-300"
-  />
-</div>
-
-           
-            <CardTitle className="text-base sm:text-lg font-semibold text-gray-800">{name}</CardTitle>
+            <div className="absolute inset-0 rounded-full bg-orange-400 shadow-xl shadow-orange-400"></div>
+            <img
+              src={img}
+              alt={name}
+              className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1
+                        bg-gradient-to-tr from-orange-500 via-orange-200 to-white
+                        ring-6 ring-white shadow-md shadow-orange-300"
+            />
+          </div>
+            <div className="bg-gradient-to-r from-orange-500 to-white p-[2px] rounded-2xl">
+          <div className="p-4 sm:p-6 bg-orange-50 rounded-[calc(1rem-2px)] shadow-lg">
+            <CardTitle className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-500 via-orange-300 to-orange-200 bg-clip-text text-transparent tracking-wide drop-shadow-md text-center">
+              {name}
+            </CardTitle>
+          </div>
+          </div>
             <CardDescription className="text-sm text-gray-500">{title}</CardDescription>
           </Card>
         ))}
