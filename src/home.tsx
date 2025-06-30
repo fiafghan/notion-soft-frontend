@@ -137,16 +137,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {[
           ["/jala.jpeg", "Jalal Bakhty", "Co-Founder"],
+          ["/waheed.png", "Waheed Safi", "Co-Founder"],
           ["/imran.png", "Imran Orya", "Frontend Developer"],
-          ["/waheed.png", "Waheed Safi", "Backend Developer"],
           ["/fardin.jpg", "Fardin Ibrahimi", "AI Engineer"],
           ["/nesar.jpg", "Nesar Awwab", "Backend Developer"],
         ].map(([img, name, title], i) => (
           <Card key={i} className="flex flex-col items-center text-center bg-gradient-to-br from-gray-100 to-white p-6 rounded-xl shadow">
-            <img src={img} alt={name} className="w-20 h-20 sm:w-24 sm:h-24 rounded-full shadow-lg mb-4" />
+                <div className="relative inline-block">
+  <div className="absolute inset-0 rounded-full bg-orange-400 opacity-30 animate-bounce"></div>
+  <img
+    src={img}
+    alt={name}
+    className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1
+               bg-gradient-to-tr from-orange-500 via-orange-200 to-white
+               ring-6 ring-white shadow-md shadow-orange-300"
+  />
+</div>
+
+           
             <CardTitle className="text-base sm:text-lg font-semibold text-gray-800">{name}</CardTitle>
             <CardDescription className="text-sm text-gray-500">{title}</CardDescription>
           </Card>
