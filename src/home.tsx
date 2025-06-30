@@ -145,7 +145,7 @@ export default function Home() {
           ["/fardin.jpg", "Fardin Ibrahimi", "AI Engineer"],
           ["/nesar.jpg", "Nesar Awwab", "Backend Developer"],
         ].map(([img, name, title], i) => (
-          <Card key={i} className="flex flex-col items-center text-center bg-gradient-to-br from-gray-100 to-white p-6 rounded-xl shadow">
+          <Card key={i} className="flex flex-col items-center text-center bg-gradient-to-br from-gray-100 to-white p-6 rounded-xl">
                 <div className="relative inline-block">
             <div className="absolute inset-0 rounded-full bg-orange-400 shadow-xl shadow-orange-400"></div>
             <img
