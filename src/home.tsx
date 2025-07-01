@@ -124,12 +124,12 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-6">Executive Notes</h2>
         </div>
-        <div className="max-w-5xl mx-auto bg-black text-white rounded-3xl shadow-xl p-6 sm:p-10">
+        <div className="max-w-5xl mx-auto bg-gray-300 text-white rounded-3xl shadow-xl p-6 sm:p-10">
           <div className="flex flex-col md:flex-row items-center md:space-x-6 space-y-4 md:space-y-0">
-            <img src="/naweed.png" alt="CEO" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full shadow-lg" />
+            <img src="/naweed.png" alt="CEO" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-black border-1 shadow-lg shadow-black" />
             <div>
-              <CardTitle className="text-lg sm:text-xl text-orange-300">Sayed Naweed Sayedy, Founder & CEO</CardTitle>
-              <CardDescription className="text-gray-300 mt-2 text-sm sm:text-base">
+              <CardTitle className="text-lg sm:text-xl text-black">Sayed Naweed Sayedy, Founder & CEO</CardTitle>
+              <CardDescription className="text-black mt-2 text-sm sm:text-base">
                 "At NotionSoft, our mission goes beyond delivering technology — we create meaningful digital experiences that drive real transformation. We are not just a service provider, but a long-term partner in our clients' growth."
               </CardDescription>
             </div>
@@ -145,25 +145,20 @@ export default function Home() {
           ["/fardin.jpg", "Fardin Ibrahimi", "AI Engineer"],
           ["/nesar.jpg", "Nesar Awwab", "Backend Developer"],
         ].map(([img, name, title], i) => (
-          <Card key={i} className="flex flex-col items-center text-center bg-gradient-to-br from-gray-100 to-white p-6 rounded-xl">
+          <Card key={i} className="flex flex-col items-center text-center bg-gray-200 p-6 rounded-xl">
                 <div className="relative inline-block">
-            <div className="absolute inset-0 rounded-full bg-orange-400 shadow-xl shadow-orange-400"></div>
+            <div className="absolute inset-0 rounded-full"></div>
             <img
               src={img}
               alt={name}
               className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1
-                        bg-gradient-to-tr from-orange-500 via-orange-200 to-white
-                        ring-6 ring-white shadow-md shadow-orange-300"
+                        border-1 border-gray-600"
             />
           </div>
-            <div className="bg-gradient-to-r from-orange-500 to-white p-[2px] rounded-2xl">
-          <div className="p-4 sm:p-6 bg-orange-50 rounded-[calc(1rem-2px)] shadow-lg">
-            <CardTitle className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-500 via-orange-300 to-orange-200 bg-clip-text text-transparent tracking-wide drop-shadow-md text-center">
+            <CardTitle className="text-lg sm:text-xl md:text-xl font-bold drop-shadow-md text-center text-gray-700">
               {name}
             </CardTitle>
-          </div>
-          </div>
-            <CardDescription className="text-sm text-gray-500">{title}</CardDescription>
+            <CardDescription className="text-md text-gray-600">{title}</CardDescription>
           </Card>
         ))}
       </section>

@@ -38,7 +38,7 @@ export default function Header() {
           <NavigationMenu className="hidden sm:flex">
             <NavigationMenuList className="flex space-x-6">
               <NavigationMenuItem>
-                <NavigationMenuLink><Link to="/">Home</Link></NavigationMenuLink>
+                <NavigationMenuLink ><Link to="/" >Home</Link ></NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink><Link to="/services">Services</Link></NavigationMenuLink>
