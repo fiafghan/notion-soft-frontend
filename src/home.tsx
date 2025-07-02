@@ -17,6 +17,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { motion } from "framer-motion";
 
 export default function Home() {
   const ImagesUrl = [
@@ -112,11 +113,19 @@ export default function Home() {
             desc: "E-commerce portals for manufacturers.",
           },
         ].map(({ title, desc }, i) => (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+          >
           <Card key={i} className="bg-gradient-to-br from-gray-100 to-white p-6 rounded-xl shadow hover:shadow-md transition">
             <CardTitle className="text-lg sm:text-xl font-semibold mb-2">{title}</CardTitle>
             <CardDescription className="text-sm sm:text-base text-gray-600 mb-4">{desc}</CardDescription>
             <Button variant="outline" className="bg-black text-white">Learn More</Button>
           </Card>
+          </motion.div>
         ))}
       </section>
 
@@ -145,7 +154,17 @@ export default function Home() {
           ["/fardin.jpg", "Fardin Ibrahimi", "AI Engineer"],
           ["/nesar.jpg", "Nesar Awwab", "Backend Developer"],
         ].map(([img, name, title], i) => (
+          
           <Card key={i} className="flex flex-col items-center text-center bg-gray-200 p-6 rounded-xl">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.12)" }}
+              whileTap={{ scale: 0.97 }}
+              className="flex flex-col items-center text-center bg-gray-200 p-6 rounded-xl cursor-pointer"
+            >
                 <div className="relative inline-block">
             <div className="absolute inset-0 rounded-full"></div>
             <img
@@ -159,6 +178,7 @@ export default function Home() {
               {name}
             </CardTitle>
             <CardDescription className="text-md text-gray-600">{title}</CardDescription>
+            </motion.div>
           </Card>
         ))}
       </section>

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import {Button} from "@/components/ui/button";
 import PostCard from "./components/ui/postcard";
+import { motion } from "framer-motion";
 
 function Blog() {
   return (
@@ -40,7 +41,22 @@ function Blog() {
             Explore our latest articles and insights.
           </p>
         </header>
-        <PostCard />
+        <motion.div
+  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+  whileHover={{ scale: 1.03 }}
+  whileTap={{ scale: 0.97 }}
+>
+        <PostCard 
+         image="/soft-eng.png"
+         title = "me"
+          description = "description here..."
+          author = "Fardin IBrahimi"
+          date = "1/1/2025"
+        />
+
+        </motion.div>
 
         {/* Posts Grid */}
 
