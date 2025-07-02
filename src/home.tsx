@@ -115,7 +115,7 @@ export default function Home() {
           <Card key={i} className="bg-gradient-to-br from-gray-100 to-white p-6 rounded-xl shadow hover:shadow-md transition">
             <CardTitle className="text-lg sm:text-xl font-semibold mb-2">{title}</CardTitle>
             <CardDescription className="text-sm sm:text-base text-gray-600 mb-4">{desc}</CardDescription>
-            <Button variant="outline">Learn More</Button>
+            <Button variant="outline" className="bg-black text-white">Learn More</Button>
           </Card>
         ))}
       </section>
