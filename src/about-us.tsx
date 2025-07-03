@@ -1,4 +1,6 @@
 import Header from './components/ui/header';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import {
   Info,
   Settings,
@@ -22,9 +24,24 @@ import { Input } from './components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 function AboutUs() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  // Example transforms:
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0px", "60px"]);
   return (
-    <div className="grid grid-cols-1">
+    <>
       <Header />
+      <motion.div
+        ref={containerRef}
+        style={{ scale, opacity, y }}
+        className="grid grid-cols-1 transition-transform duration-500"
+      >
 
       <section className="text-center py-10 px-6">
         <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-orange-500 to-orange-200 bg-clip-text text-transparent">
@@ -139,9 +156,9 @@ function AboutUs() {
           </CardContent>
         </Card>
       </section>
-
+    </motion.div>
       <Footer />
-    </div>
+      </>
   );
 }
 
