@@ -3,26 +3,37 @@ import {
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuLink,
-} from "./navigation-menu"; // adjust your import path
+} from "./navigation-menu";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-gray-300 to-orange-200 shadow-md">
+    <motion.header
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="sticky top-0 z-50 bg-gradient-to-r from-gray-300 to-orange-200 shadow-md"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
+            className="flex items-center"
+          >
             <img
               src="/notionsoft-logo.png"
               alt="Notion Soft"
               className="h-12 w-auto"
             />
-          </div>
+          </motion.div>
 
           {/* Mobile Menu Toggle */}
           <div className="sm:hidden">
@@ -37,42 +48,67 @@ export default function Header() {
           {/* Navigation Links for Desktop */}
           <NavigationMenu className="hidden sm:flex">
             <NavigationMenuList className="flex space-x-6">
-              <NavigationMenuItem>
-                <NavigationMenuLink ><Link to="/" >Home</Link ></NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink><Link to="/services">Services</Link></NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink><Link to="/about-us">About Us</Link></NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink><Link to="/blog">Blog</Link></NavigationMenuLink>
-              </NavigationMenuItem>
+              {["Home", "Services", "About Us", "Blog"].map((item, index) => (
+                <NavigationMenuItem key={index}>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      to={item === "Home" ? "/" : `/${item.toLowerCase().replace(/ /g, "-")}`}
+                    >
+                      <motion.span
+                        whileHover={{
+                          scale: 1.08,
+                          color: "#1f2937", // gray-800
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className="relative text-sm sm:text-base font-medium text-gray-700 hover:text-black"
+                      >
+                        {item}
+                        <motion.span
+                          className="absolute left-0 -bottom-1 h-[2px] w-full bg-black origin-left"
+                          initial={{ scaleX: 0 }}
+                          whileHover={{ scaleX: 1 }}
+                          transition={{ duration: 0.3, ease: "easeOut" }}
+                        />
+                      </motion.span>
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
             </NavigationMenuList>
           </NavigationMenu>
         </div>
 
-        {/* Mobile Navigation Links */}
-        {menuOpen && (
-          <NavigationMenu className="sm:hidden mt-4">
-            <NavigationMenuList className="flex flex-col space-y-4 text-center">
-              <NavigationMenuItem>
-                <NavigationMenuLink><Link to="/">Home</Link></NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink><Link to="/services">Services</Link></NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink><Link to="/about-us">About Us</Link></NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink><Link to="/blog">Blog</Link></NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        )}
+        {/* Mobile Navigation Menu with AnimatePresence */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="sm:hidden mt-4"
+            >
+              <NavigationMenu>
+                <NavigationMenuList className="flex flex-col space-y-4 text-center">
+                  {["Home", "Services", "About Us", "Blog"].map((item, index) => (
+                    <NavigationMenuItem key={index}>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to={item === "Home" ? "/" : `/${item.toLowerCase().replace(/ /g, "-")}`}
+                          onClick={() => setMenuOpen(false)}
+                          className="text-lg text-gray-800 hover:text-black"
+                        >
+                          {item}
+                        </Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 }

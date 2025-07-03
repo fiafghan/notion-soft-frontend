@@ -45,18 +45,25 @@ export default function Home() {
   });
 
       // Scale elements based on scroll position
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.80]);
-    const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.90]);
+    const scale = useTransform(scrollYProgress, [0, 0.80], [1, 0.90]);
+    const opacity = useTransform(scrollYProgress, [0.70, 0.70], [1, 1]);
+    const skewY = useTransform(scrollYProgress, [0, 1, 1], ["0deg", "0.2deg", "2deg"]);
+    const borderRadius = useTransform(scrollYProgress, [1, 1], ["2rem", "2rem"])
 
   return (
    
     <div className="bg-white text-gray-900 font-sans">
       <Header />
           <motion.div
-        ref={containerRef}
-        style={{ scale, opacity }}
-        className="bg-white text-gray-900 font-sans"
-      >
+            ref={containerRef}
+            style={{
+              scale,
+              opacity,
+              borderRadius: borderRadius,
+              skewY: skewY,
+            }}
+            className="bg-white text-gray-900 font-sans transition-all duration-500 ease-in-out overflow-hidden"
+          >
       <section className="relative w-full py-16 sm:py-20 bg-gradient-to-br from-white to-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <Card className="bg-transparent border-none shadow-none">
