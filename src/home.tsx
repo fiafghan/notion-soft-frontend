@@ -17,7 +17,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform  } from "framer-motion";
+import { useRef } from "react";
 
 export default function Home() {
   const ImagesUrl = [
@@ -36,10 +37,26 @@ export default function Home() {
     Autoplay({ delay: 3000, stopOnInteraction: false })
   );
 
+  const containerRef = useRef(null);
+  // Scroll progress from top (0) to bottom (1)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+      // Scale elements based on scroll position
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.80]);
+    const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.90]);
+
   return (
+   
     <div className="bg-white text-gray-900 font-sans">
       <Header />
-
+          <motion.div
+        ref={containerRef}
+        style={{ scale, opacity }}
+        className="bg-white text-gray-900 font-sans"
+      >
       <section className="relative w-full py-16 sm:py-20 bg-gradient-to-br from-white to-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <Card className="bg-transparent border-none shadow-none">
@@ -182,8 +199,9 @@ export default function Home() {
           </Card>
         ))}
       </section>
-
+      </motion.div>
       <Footer />
     </div>
+    
   );
 }
