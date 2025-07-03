@@ -68,13 +68,28 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <Card className="bg-transparent border-none shadow-none">
             <CardHeader className="space-y-6">
-              <CardTitle className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-center text-gray-800">
-                Empowering Your Business with{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">
-                  Web, Mobile, AI, Desktop
-                </span>{' '}
-                Applications
-              </CardTitle>
+              <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-center text-gray-800"
+            >
+            Empowering Your Business with{" "}
+            <motion.span
+              initial={{ backgroundPosition: "0% 50%" }}
+              animate={{ backgroundPosition: "100% 50%" }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-[length:200%_200%]"
+            >
+              Web, Mobile, AI, Desktop
+            </motion.span>{" "}
+            Applications
+          </motion.h2>
               <CardDescription className="text-center max-w-3xl mx-auto text-base sm:text-lg text-gray-600">
                 Innovative solutions for web, mobile, and AI applications that grow your business.
               </CardDescription>
