@@ -21,19 +21,44 @@ import {
 } from 'lucide-react';
 
 import Footer from './components/ui/footer';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
 
 function Services() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+    // Create scroll-based transforms
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.90]);
+    const y = useTransform(scrollYProgress, [0, 1], ["50px", "50px"]);
+    const opacity = useTransform(scrollYProgress, [0, 1], [1, 1]);
   return (
     <div>
       <Header />
+          
       <section className="bg-gradient-to-l from-gray-200 to-orange-100 py-12">
+          
         <div className="max-w-screen-xl mx-auto px-6 md:px-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-center bg-gradient-to-r from-orange-500 to-gray-100 bg-clip-text text-transparent">
-            Our Services At A Glance
-          </h1>
-          <p className="text-center text-gray-600 mt-4 text-base md:text-lg max-w-2xl mx-auto">
-            We deliver smart, scalable, and reliable tech solutions — from AI and desktop apps to secure networks and biometric systems.
-          </p>
+            <motion.h1
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-extrabold text-center bg-gradient-to-r from-orange-500 to-gray-100 bg-clip-text text-transparent"
+            >            Our Services At A Glance
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center text-gray-600 mt-4 text-base md:text-lg max-w-2xl mx-auto"
+          >            We deliver smart, scalable, and reliable tech solutions — from AI and desktop apps to secure networks and biometric systems.
+          </motion.p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
             {[{
@@ -73,6 +98,15 @@ function Services() {
               desc: "AI-driven bots for customer support, learning, and automated services.",
               icon: <Bot className="text-orange-400 w-7 h-7" />
             }].map((service, index) => (
+                <motion.div
+                  initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.90, 1, 0.90, 0.5],
+                  }}
+                  viewport={{ once: true, amount: 0.80 }} // triggers when 20% is in view
+                >              
               <Card key={index} className="rounded-2xl p-6 shadow-xl hover:shadow-2xl transition duration-300 border border-orange-100 bg-white">
                 <CardHeader className="space-y-3">
                   <CardAction>{service.icon}</CardAction>
@@ -84,6 +118,7 @@ function Services() {
                   </CardDescription>
                 </CardHeader>
               </Card>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -109,6 +144,11 @@ function Services() {
               alt={item.title}
               className="w-full max-w-lg rounded-xl shadow-2xl shadow-gray-700 mx-auto"
             />
+            <motion.div
+              ref={containerRef}
+              style={{ scale, y, opacity }}
+              className="transition-transform duration-300"
+            >
             <Card className="bg-transparent shadow-none border-none">
               <CardHeader className="space-y-4">
                 <CardAction>{item.icon}</CardAction>
@@ -120,6 +160,7 @@ function Services() {
                 </CardDescription>
               </CardHeader>
             </Card>
+            </motion.div>
           </div>
         ))}
         <Footer />

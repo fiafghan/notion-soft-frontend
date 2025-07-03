@@ -22,18 +22,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
-            className="flex items-center"
-          >
+         
             <img
               src="/notionsoft-logo.png"
               alt="Notion Soft"
               className="h-12 w-auto"
             />
-          </motion.div>
 
           {/* Mobile Menu Toggle */}
           <div className="sm:hidden">
