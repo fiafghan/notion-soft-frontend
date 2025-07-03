@@ -56,19 +56,21 @@ export default function Header() {
                     >
                       <motion.span
                         whileHover={{
-                          scale: 1.08,
-                          color: "#1f2937", // gray-800
+                          scale: 1.07,
+                          color: "#111827", // Tailwind gray-900
                         }}
-                        transition={{ duration: 0.3 }}
-                        className="relative text-sm sm:text-base font-medium text-gray-700 hover:text-black"
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                        }}
+                        className="text-base font-medium text-gray-700 transition-colors duration-300"
                       >
                         {item}
                         <motion.span
-                          className="absolute left-0 -bottom-1 h-[2px] w-full bg-black origin-left"
-                          initial={{ scaleX: 0 }}
-                          whileHover={{ scaleX: 1 }}
-                          transition={{ duration: 0.3, ease: "easeOut" }}
-                        />
+                        layoutId="underline"
+                        className="absolute left-1/2 -bottom-1 h-[2px] w-0 group-hover:w-full group-hover:left-0 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 origin-center transition-all duration-300"
+                      />
                       </motion.span>
                     </Link>
                   </NavigationMenuLink>
